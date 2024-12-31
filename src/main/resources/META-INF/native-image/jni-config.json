@@ -3,10 +3,7 @@
   "name":"[Lcom.sun.glass.ui.Screen;"
 },
 {
-  "name":"sun.awt.shell.ShellFolderManager",
-  "allDeclaredFields":true,
-  "allDeclaredMethods":true,
-  "allDeclaredConstructors":true
+  "name":"[Ljava.lang.String;"
 },
 {
   "name":"com.sun.glass.ui.Application",
@@ -16,6 +13,14 @@
   "name":"com.sun.glass.ui.Clipboard",
   "fields":[{"name":"name"}],
   "methods":[{"name":"actionPerformed","parameterTypes":["int"] }, {"name":"contentChanged","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.glass.ui.CommonDialogs",
+  "methods":[{"name":"createFileChooserResult","parameterTypes":["java.lang.String[]","com.sun.glass.ui.CommonDialogs$ExtensionFilter[]","int"] }]
+},
+{
+  "name":"com.sun.glass.ui.CommonDialogs$ExtensionFilter",
+  "methods":[{"name":"extensionsToArray","parameterTypes":[] }, {"name":"getDescription","parameterTypes":[] }]
 },
 {
   "name":"com.sun.glass.ui.Cursor",
@@ -105,11 +110,6 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"com.sun.javafx.font.directwrite.DWRITE_MATRIX",
-  "fields":[{"name":"dx"}, {"name":"dy"}, {"name":"m11"}, {"name":"m12"}, {"name":"m21"}, {"name":"m22"}],
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
   "name":"com.sun.javafx.font.directwrite.RECT",
   "fields":[{"name":"bottom"}, {"name":"left"}, {"name":"right"}, {"name":"top"}],
   "methods":[{"name":"<init>","parameterTypes":[] }]
@@ -117,47 +117,6 @@
 {
   "name":"com.sun.prism.impl.PrismSettings",
   "fields":[{"name":"disableD3D9Ex"}, {"name":"forceGPU"}, {"name":"isVsyncEnabled"}, {"name":"verbose"}]
-},
-{
-  "name":"java.awt.AWTEvent",
-  "fields":[{"name":"bdata"}, {"name":"consumed"}, {"name":"id"}]
-},
-{
-  "name":"java.awt.Component",
-  "fields":[{"name":"appContext"}, {"name":"background"}, {"name":"cursor"}, {"name":"enabled"}, {"name":"focusable"}, {"name":"foreground"}, {"name":"graphicsConfig"}, {"name":"height"}, {"name":"parent"}, {"name":"peer"}, {"name":"visible"}, {"name":"width"}, {"name":"x"}, {"name":"y"}],
-  "methods":[{"name":"getFont_NoClientCode","parameterTypes":[] }, {"name":"getLocationOnScreen_NoTreeLock","parameterTypes":[] }, {"name":"getToolkitImpl","parameterTypes":[] }, {"name":"isEnabledImpl","parameterTypes":[] }]
-},
-{
-  "name":"java.awt.Font",
-  "fields":[{"name":"name"}, {"name":"pData"}, {"name":"size"}, {"name":"style"}],
-  "methods":[{"name":"getFont","parameterTypes":["java.lang.String"] }, {"name":"getFontPeer","parameterTypes":[] }]
-},
-{
-  "name":"java.awt.Insets",
-  "fields":[{"name":"bottom"}, {"name":"left"}, {"name":"right"}, {"name":"top"}],
-  "methods":[{"name":"<init>","parameterTypes":["int","int","int","int"] }]
-},
-{
-  "name":"java.awt.Toolkit",
-  "methods":[{"name":"getDefaultToolkit","parameterTypes":[] }, {"name":"getFontMetrics","parameterTypes":["java.awt.Font"] }]
-},
-{
-  "name":"java.awt.desktop.UserSessionEvent$Reason",
-  "fields":[{"name":"CONSOLE"}, {"name":"LOCK"}, {"name":"REMOTE"}, {"name":"UNSPECIFIED"}]
-},
-{
-  "name":"java.awt.event.InputEvent",
-  "fields":[{"name":"modifiers"}],
-  "methods":[{"name":"getButtonDownMasks","parameterTypes":[] }]
-},
-{
-  "name":"java.awt.image.ColorModel",
-  "fields":[{"name":"colorSpace"}, {"name":"colorSpaceType"}, {"name":"isAlphaPremultiplied"}, {"name":"is_sRGB"}, {"name":"nBits"}, {"name":"numComponents"}, {"name":"supportsAlpha"}, {"name":"transparency"}],
-  "methods":[{"name":"getRGBdefault","parameterTypes":[] }]
-},
-{
-  "name":"java.awt.image.IndexColorModel",
-  "fields":[{"name":"allgrayopaque"}, {"name":"map_size"}, {"name":"rgb"}, {"name":"transparent_index"}]
 },
 {
   "name":"java.lang.Boolean",
@@ -181,7 +140,7 @@
 },
 {
   "name":"java.lang.String",
-  "methods":[{"name":"toLowerCase","parameterTypes":["java.util.Locale"] }]
+  "methods":[{"name":"concat","parameterTypes":["java.lang.String"] }, {"name":"toLowerCase","parameterTypes":["java.util.Locale"] }]
 },
 {
   "name":"java.util.ArrayList",
@@ -204,63 +163,7 @@
   "methods":[{"name":"rgb","parameterTypes":["int","int","int","double"] }]
 },
 {
-  "name":"sun.awt.AWTAutoShutdown",
-  "methods":[{"name":"notifyToolkitThreadBusy","parameterTypes":[] }, {"name":"notifyToolkitThreadFree","parameterTypes":[] }]
-},
-{
-  "name":"sun.awt.SunToolkit",
-  "methods":[{"name":"isTouchKeyboardAutoShowEnabled","parameterTypes":[] }]
-},
-{
-  "name":"sun.awt.image.SunVolatileImage",
-  "fields":[{"name":"volSurfaceManager"}]
-},
-{
-  "name":"sun.awt.image.VolatileSurfaceManager",
-  "fields":[{"name":"sdCurrent"}]
-},
-{
-  "name":"sun.awt.windows.WComponentPeer",
-  "fields":[{"name":"hwnd"}, {"name":"winGraphicsConfig"}],
-  "methods":[{"name":"disposeLater","parameterTypes":[] }, {"name":"replaceSurfaceData","parameterTypes":[] }, {"name":"replaceSurfaceDataLater","parameterTypes":[] }]
-},
-{
-  "name":"sun.awt.windows.WDesktopPeer",
-  "methods":[{"name":"systemSleepCallback","parameterTypes":["boolean"] }, {"name":"userSessionCallback","parameterTypes":["boolean","java.awt.desktop.UserSessionEvent$Reason"] }]
-},
-{
-  "name":"sun.awt.windows.WObjectPeer",
-  "fields":[{"name":"createError"}, {"name":"destroyed"}, {"name":"pData"}, {"name":"target"}],
-  "methods":[{"name":"getPeerForTarget","parameterTypes":["java.lang.Object"] }]
-},
-{
-  "name":"sun.awt.windows.WToolkit",
-  "methods":[{"name":"displayChanged","parameterTypes":[] }, {"name":"windowsSettingChange","parameterTypes":[] }]
-},
-{
   "name":"sun.instrument.InstrumentationImpl",
   "methods":[{"name":"<init>","parameterTypes":["long","boolean","boolean","boolean"] }, {"name":"loadClassAndCallAgentmain","parameterTypes":["java.lang.String","java.lang.String"] }, {"name":"loadClassAndCallPremain","parameterTypes":["java.lang.String","java.lang.String"] }, {"name":"transform","parameterTypes":["java.lang.Module","java.lang.ClassLoader","java.lang.String","java.lang.Class","java.security.ProtectionDomain","byte[]","boolean"] }]
-},
-{
-  "name":"sun.java2d.Disposer",
-  "methods":[{"name":"addRecord","parameterTypes":["java.lang.Object","long","long"] }]
-},
-{
-  "name":"sun.java2d.InvalidPipeException"
-},
-{
-  "name":"sun.java2d.NullSurfaceData"
-},
-{
-  "name":"sun.java2d.SurfaceData",
-  "fields":[{"name":"pData"}, {"name":"valid"}]
-},
-{
-  "name":"sun.java2d.pipe.Region",
-  "fields":[{"name":"bands"}, {"name":"endIndex"}, {"name":"hix"}, {"name":"hiy"}, {"name":"lox"}, {"name":"loy"}]
-},
-{
-  "name":"sun.java2d.pipe.RegionIterator",
-  "fields":[{"name":"curIndex"}, {"name":"numXbands"}, {"name":"region"}]
 }
 ]

@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="main" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bfreuden.docxgen.gui.MainController">
+<VBox fx:id="main" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bfreuden.docxgen.gui.ConfigController">
     <padding>
         <Insets bottom="0" left="0" right="0" top="0" />
     </padding>
@@ -18,7 +18,7 @@
                         <DropShadow height="114.0" offsetY="5.0" radius="56.5" width="114.0" />
                     </effect>
                 </Label>
-                <Label fx:id="subtitle" layoutX="68.0" layoutY="100.0" prefHeight="32.0" stylesheets="@gui.css" text="A l'usage exclusif de l'étude d'Isabelle Bret" textFill="#ffffff">
+                <Label fx:id="subtitle" layoutX="68.0" layoutY="100.0" prefHeight="32.0" stylesheets="@gui.css" text="Paramètres" textFill="#ffffff">
                     <effect>
                         <DropShadow height="114.0" offsetY="5.0" radius="56.5" width="114.0" />
                     </effect>
@@ -48,30 +48,17 @@
                     </effect>
                 </ImageView>
                 <HBox layoutX="68.0" layoutY="171.0">
-                    <Button fx:id="selectPhotoDirBtn" mnemonicParsing="false" onAction="#selectPhotoDirectory" prefHeight="38" prefWidth="350" styleClass="btn,btn-enabled" stylesheets="@gui.css"
-                            text="Sélectionner le répertoire des photos">
-<!--                        <HBox.margin>-->
-<!--                            <Insets right="20"/>-->
-<!--                        </HBox.margin>-->
-                    </Button>
-<!--                    <Button fx:id="openTemplateBtn" mnemonicParsing="false" onAction="#openTemplate" prefHeight="38"-->
-<!--                            prefWidth="250" styleClass="btn,btn-enabled" stylesheets="@gui.css" text="Ouvrir la matrice"/>-->
-                </HBox>
-                <HBox layoutX="68.0" layoutY="271.0">
-                    <ProgressBar fx:id="progressBar" prefWidth="650"></ProgressBar>
-                </HBox>
-                <HBox layoutX="68.0" layoutY="371.0">
-                    <Button fx:id="openParametersBtn" mnemonicParsing="false" onAction="#openParameters" prefHeight="38"
-                            layoutX="68.0" layoutY="371.0"
-                            prefWidth="250" styleClass="btn,btn-enabled" stylesheets="@gui.css" text="Ouvrir les paramètres">
+                    <Button fx:id="selectTemplateBtn" mnemonicParsing="false" onAction="#selectTemplate" prefHeight="38" prefWidth="300" styleClass="btn,btn-enabled" stylesheets="@gui.css" text="Sélectionner la matrice">
                         <HBox.margin>
                             <Insets right="20"/>
                         </HBox.margin>
                     </Button>
-                    <Button fx:id="createDocumentBtn" mnemonicParsing="false" onAction="#createDocument" prefHeight="38"
-                            prefWidth="250" styleClass="btn,btn-enabled" stylesheets="@gui.css" text="Créer le constat"/>
-                    <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exit" prefHeight="38"
-                            prefWidth="250" styleClass="btn,btn-enabled" stylesheets="@gui.css" text="Quitter"/>
+                    <Button fx:id="openTemplateBtn" mnemonicParsing="false" onAction="#openTemplate" prefHeight="38"
+                            prefWidth="250" styleClass="btn,btn-enabled" stylesheets="@gui.css" text="Ouvrir la matrice"/>
+                </HBox>
+                <HBox layoutX="68.0" layoutY="371.0">
+                    <Button fx:id="closeParametersBtn" mnemonicParsing="false" onAction="#closeParameters" prefHeight="38"
+                            prefWidth="250" styleClass="btn" stylesheets="@gui.css" text="Fermer les paramètres"/>
                 </HBox>
             </children>
         </Pane>

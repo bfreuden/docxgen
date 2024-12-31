@@ -16,17 +16,27 @@
     padding: 80px 0px 0px 0px;
 }
 
-#download, #getstarted {
+.btn {
     -fx-font-family: "Oracle Sans", sans-serif;
     -fx-font-size: 18px;
     -fx-font-weight: 400;
-    -fx-background-color: rgb(242, 145, 16);
     -fx-background-radius: 12;
     -fx-background-insets: 1;
+}
+
+.btn-enabled {
+    -fx-background-color: rgb(242, 145, 16);
     -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
+}
+
+.btn-disabled {
+    -fx-text-fill: #aaaaaa;
+    -fx-background-color: rgb(98, 58, 5);
 }
 
 #download:hover, #getstarted:hover {
     -fx-background-color: rgb(221, 131, 12);
     transition: rgb(242, 145, 16) 0.3s ease;
 }
+

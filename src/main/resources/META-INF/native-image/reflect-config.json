@@ -4,26 +4,6 @@
   "methods":[{"name":"premain","parameterTypes":["java.lang.String","java.lang.instrument.Instrumentation"] }]
 },
 {
-  "name":"org.bfreuden.docxgen.JavaFXApplication",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"org.bfreuden.docxgen.Main",
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"main","parameterTypes":["java.lang.String[]"] }]
-},
-{
-  "name":"org.bfreuden.docxgen.gui.Controller",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"initialize","parameterTypes":[] }, {"name":"openLinkDownload","parameterTypes":[] }, {"name":"openLinkGetStarted","parameterTypes":[] }]
-},
-  {
-    "name":"sun.awt.shell.ShellFolderManager",
-    "allDeclaredFields":true,
-    "allDeclaredMethods":true,
-    "allDeclaredConstructors":true
-  },
-{
   "name":"com.sun.glass.ui.Screen"
 },
 {
@@ -70,81 +50,35 @@
 },
 {
   "name":"com.sun.prism.shader.FillPgram_Color_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true,
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.FillPgram_ImagePattern_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true,
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.FillPgram_LinearGradient_PAD_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true,
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.FillRoundRect_Color_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true,
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.Mask_TextureSuper_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.Solid_TextureRGB_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true,
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.Texture_Color_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true,
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.prism.shader.Texture_LinearGradient_PAD_Loader",
-  "allDeclaredFields":true,
-  "allPublicFields":true,
-  "allDeclaredMethods":true,
-  "allPublicMethods":true,
-  "allDeclaredConstructors":true,
-  "allPublicConstructors":true
+  "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
   "name":"com.sun.scenario.effect.impl.hw.d3d.D3DShaderSource",
@@ -176,15 +110,11 @@
 },
 {
   "name":"java.lang.Class",
-  "methods":[{"name":"forName","parameterTypes":["java.lang.Module","java.lang.String"] }, {"name":"getModule","parameterTypes":[] }]
+  "methods":[{"name":"getModule","parameterTypes":[] }]
 },
 {
   "name":"java.lang.Module",
-  "methods":[{"name":"getDescriptor","parameterTypes":[] }, {"name":"getLayer","parameterTypes":[] }, {"name":"getName","parameterTypes":[] }, {"name":"getResourceAsStream","parameterTypes":["java.lang.String"] }]
-},
-{
-  "name":"java.lang.ModuleLayer",
-  "methods":[{"name":"boot","parameterTypes":[] }, {"name":"findModule","parameterTypes":["java.lang.String"] }]
+  "methods":[{"name":"getResourceAsStream","parameterTypes":["java.lang.String"] }]
 },
 {
   "name":"java.nio.ByteBuffer",
@@ -215,10 +145,10 @@
   "name":"javafx.geometry.Button"
 },
 {
-  "name":"javafx.geometry.Canvas"
+  "name":"javafx.geometry.DropShadow"
 },
 {
-  "name":"javafx.geometry.DropShadow"
+  "name":"javafx.geometry.HBox"
 },
 {
   "name":"javafx.geometry.Image"
@@ -243,6 +173,9 @@
   "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },
 {
+  "name":"javafx.geometry.ProgressBar"
+},
+{
   "name":"javafx.geometry.VBox"
 },
 {
@@ -263,36 +196,6 @@
 },
 {
   "name":"javafx.scene.Scene"
-},
-{
-  "name":"javafx.scene.canvas.BorderPane"
-},
-{
-  "name":"javafx.scene.canvas.BoxBlur"
-},
-{
-  "name":"javafx.scene.canvas.Canvas",
-  "queryAllDeclaredMethods":true,
-  "queryAllPublicConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setHeight","parameterTypes":["double"] }, {"name":"setWidth","parameterTypes":["double"] }]
-},
-{
-  "name":"javafx.scene.canvas.DropShadow"
-},
-{
-  "name":"javafx.scene.canvas.Image"
-},
-{
-  "name":"javafx.scene.canvas.ImageView"
-},
-{
-  "name":"javafx.scene.canvas.Label"
-},
-{
-  "name":"javafx.scene.canvas.Pane"
-},
-{
-  "name":"javafx.scene.canvas.VBox"
 },
 {
   "name":"javafx.scene.control.BorderPane"
@@ -319,6 +222,9 @@
   "name":"javafx.scene.control.DropShadow"
 },
 {
+  "name":"javafx.scene.control.HBox"
+},
+{
   "name":"javafx.scene.control.Image"
 },
 {
@@ -333,10 +239,20 @@
 {
   "name":"javafx.scene.control.Labeled",
   "queryAllDeclaredMethods":true,
-  "methods":[{"name":"setMnemonicParsing","parameterTypes":["boolean"] }, {"name":"setText","parameterTypes":["java.lang.String"] }, {"name":"setTextAlignment","parameterTypes":["javafx.scene.text.TextAlignment"] }, {"name":"setTextFill","parameterTypes":["javafx.scene.paint.Paint"] }]
+  "methods":[{"name":"setMnemonicParsing","parameterTypes":["boolean"] }, {"name":"setText","parameterTypes":["java.lang.String"] }, {"name":"setTextFill","parameterTypes":["javafx.scene.paint.Paint"] }]
 },
 {
   "name":"javafx.scene.control.Pane"
+},
+{
+  "name":"javafx.scene.control.ProgressBar",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"javafx.scene.control.ProgressIndicator",
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"javafx.scene.control.VBox"
@@ -365,6 +281,9 @@
   "queryAllDeclaredMethods":true
 },
 {
+  "name":"javafx.scene.effect.HBox"
+},
+{
   "name":"javafx.scene.effect.Image"
 },
 {
@@ -378,6 +297,9 @@
 },
 {
   "name":"javafx.scene.image.BorderPane"
+},
+{
+  "name":"javafx.scene.image.HBox"
 },
 {
   "name":"javafx.scene.image.Image"
@@ -399,10 +321,10 @@
   "methods":[{"name":"getAlignment","parameterTypes":["javafx.scene.Node"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.Parent"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.layout.Pane"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.layout.Region"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.Parent"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.layout.Pane"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.layout.Region"] }, {"name":"setAlignment","parameterTypes":["java.lang.Object","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.css.Styleable","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.event.EventTarget","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Node","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Node","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Parent","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Parent","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.layout.Pane","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.layout.Pane","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.layout.Region","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.layout.Region","javafx.geometry.Pos"] }]
 },
 {
-  "name":"javafx.scene.layout.Image"
-},
-{
-  "name":"javafx.scene.layout.ImageView"
+  "name":"javafx.scene.layout.HBox",
+  "queryAllDeclaredMethods":true,
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"setMargin","parameterTypes":["javafx.scene.Node","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.Parent","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.control.Button","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.control.ButtonBase","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.control.Control","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.control.Labeled","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.control.Skinnable","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.layout.Region","javafx.geometry.Insets"] }]
 },
 {
   "name":"javafx.scene.layout.Pane",
@@ -426,9 +348,6 @@
   "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },
 {
-  "name":"javafx.scene.shape.Rectangle"
-},
-{
   "name":"javafx.scene.shape.Shape"
 },
 {
@@ -436,10 +355,6 @@
 },
 {
   "name":"javafx.scene.text.Text"
-},
-{
-  "name":"javafx.scene.text.TextAlignment",
-  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },
 {
   "name":"javafx.scene.transform.Transform"
@@ -454,8 +369,20 @@
   "name":"javafx.stage.Window"
 },
 {
-  "name":"sun.java2d.marlin.DMarlinRenderingEngine",
+  "name":"org.bfreuden.docxgen.JavaFXApplication",
   "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.bfreuden.docxgen.gui.ConfigController",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"closeParameters","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openTemplate","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"selectTemplate","parameterTypes":[] }]
+},
+{
+  "name":"org.bfreuden.docxgen.gui.MainController",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"createDocument","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"exit","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openParameters","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"selectPhotoDirectory","parameterTypes":[] }]
 },
 {
   "name":"sun.misc.Unsafe",

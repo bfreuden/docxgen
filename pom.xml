@@ -14,14 +14,14 @@
         <javafx.version>22</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
-        <maven.compiler.release>23</maven.compiler.release>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <maven.plugin.validation>VERBOSE</maven.plugin.validation>
         <native.maven.plugin.version>0.10.3</native.maven.plugin.version>
         <local.repository>${user.home}/.m2/repository</local.repository>
         <target.os>win</target.os>
-        <imageName>javafx-demo-native</imageName>
+        <imageName>constat-photo</imageName>
     </properties>
 
     <dependencies>
@@ -114,14 +114,14 @@
                                 <enabled>false</enabled>
                             </agent>
                             <buildArgs>
-                                <buildArg>--module-path target/${imageName}-1.0.0.jar</buildArg>
+                                <buildArg>--module-path target/${imageName}-${version}.jar</buildArg>
                                 <buildArg>-Ob</buildArg>
                                 <buildArg>-march=native</buildArg>
-                                <buildArg>--initialize-at-build-time=javafx.demo.graalvm/org.bfreuden.docxgen.Main</buildArg>
-                                <buildArg>--add-modules javafx.demo.graalvm</buildArg>
+                                <buildArg>--initialize-at-build-time=org.bfreuden.docxgen/org.bfreuden.docxgen.Main</buildArg>
+                                <buildArg>--add-modules org.bfreuden.docxgen</buildArg>
                                 <buildArg>--add-modules javafx.base,javafx.graphics,javafx.fxml,javafx.controls,javafx.swing</buildArg>
 
-                                <buildArg>--module javafx.demo.graalvm/org.bfreuden.docxgen.Main</buildArg>
+                                <buildArg>--module org.bfreuden.docxgen/org.bfreuden.docxgen.Main</buildArg>
 
                                 <buildArg>--module-path ${local.repository}/org/openjfx/javafx-base/22/javafx-base-22-${target.os}.jar</buildArg>
                                 <buildArg>--module-path ${local.repository}/org/openjfx/javafx-graphics/22/javafx-graphics-22-${target.os}.jar</buildArg>
