@@ -139,7 +139,17 @@
   }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/config-view.fxml\\E"
   }, {
+    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/graalvm_rabbit_icon.png\\E"
+  }, {
+    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/grain.png\\E"
+  }, {
+    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/gui.css\\E"
+  }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/icon.png\\E"
+  }, {
+    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/metaimage-main-01.png\\E"
+  }, {
+    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/metaimage-main-02.png\\E"
   }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/main-view.fxml\\E"
   }]},
