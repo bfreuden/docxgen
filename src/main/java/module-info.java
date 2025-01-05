@@ -8,8 +8,9 @@ module org.bfreuden.docxgen {
 	requires com.dlsc.formsfx;
 	requires org.kordamp.bootstrapfx.core;
 	requires java.desktop;
+    requires metadata.extractor;
 
-	opens org.bfreuden.docxgen to javafx.fxml, java.desktop;
+    opens org.bfreuden.docxgen to javafx.fxml, java.desktop;
 	exports org.bfreuden.docxgen;
 
 	opens org.bfreuden.docxgen.gui to javafx.fxml;
