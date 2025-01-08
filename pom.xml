@@ -20,7 +20,6 @@
         <maven.plugin.validation>VERBOSE</maven.plugin.validation>
         <native.maven.plugin.version>0.10.3</native.maven.plugin.version>
         <local.repository>${user.home}/.m2/repository</local.repository>
-        <target.os>win</target.os>
         <imageName>constat-photo</imageName>
     </properties>
 
@@ -32,6 +31,11 @@
             <version>2.19.0</version>
         </dependency>
         <!-- JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -88,6 +92,28 @@
 
     <profiles>
         <profile>
+            <id>windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <target.os>win</target.os>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <target.os>linux</target.os>
+            </properties>
+        </profile>
+        <profile>
             <id>native</id>
             <build>
                 <plugins>
@@ -141,6 +167,7 @@
                                 <buildArg>--module-path ${local.repository}/org/fxmisc/flowless/flowless/0.7.3/flowless-0.7.3.jar</buildArg>
                                 <buildArg>--module-path ${local.repository}/org/fxmisc/wellbehaved/wellbehavedfx/0.3.3/wellbehavedfx-0.3.3.jar</buildArg>
                                 <buildArg>--module-path ${local.repository}/org/fxmisc/undo/undofx/2.1.1/undofx-2.1.1.jar</buildArg>
+                                <buildArg>--module-path ${local.repository}/com/drewnoakes/metadata-extractor/2.19.0/metadata-extractor-2.19.0.jar</buildArg>
                             </buildArgs>
                         </configuration>
                     </plugin>
