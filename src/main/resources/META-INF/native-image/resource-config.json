@@ -115,6 +115,26 @@
   }, {
     "pattern":"javafx.graphics:\\Qcom/sun/prism/d3d/hlsl/Texture_LinearGradient_PAD.obj\\E"
   }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/FillPgram_Color.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/FillPgram_ImagePattern.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/FillPgram_LinearGradient_PAD.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/FillRoundRect_Color.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/Mask_TextureSuper.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/Solid_TextureRGB.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/Texture_Color.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/prism/es2/glsl/Texture_LinearGradient_PAD.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/scenario/effect/impl/es2/glsl/Blend_SCREEN.frag\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qcom/sun/scenario/effect/impl/es2/glsl/LinearConvolveShadow_128.frag\\E"
+  }, {
     "pattern":"javafx.graphics:\\Qcom/sun/scenario/effect/impl/hw/d3d/hlsl/Blend_SCREEN.obj\\E"
   }, {
     "pattern":"javafx.graphics:\\Qcom/sun/scenario/effect/impl/hw/d3d/hlsl/LinearConvolveShadow_128.obj\\E"
@@ -122,6 +142,18 @@
     "pattern":"javafx.graphics:\\Qglass.dll\\E"
   }, {
     "pattern":"javafx.graphics:\\Qjavafx_font.dll\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qlibglass.so\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qlibglassgtk3.so\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qlibjavafx_font.so\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qlibjavafx_font_freetype.so\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qlibjavafx_font_pango.so\\E"
+  }, {
+    "pattern":"javafx.graphics:\\Qlibprism_es2.so\\E"
   }, {
     "pattern":"javafx.graphics:\\Qmsvcp140.dll\\E"
   }, {
@@ -147,20 +179,20 @@
   }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/icon.png\\E"
   }, {
+    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/main-view.fxml\\E"
+  }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/metaimage-main-01.png\\E"
   }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/metaimage-main-02.png\\E"
-  }, {
-    "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/main-view.fxml\\E"
   }]},
   "bundles":[{
     "name":"com.sun.javafx.tk.quantum.QuantumMessagesBundle",
-    "locales":["", "fr"]
+    "locales":["", "fr", "und"]
   }, {
     "name":"com/sun/glass/ui/win/themes",
-    "locales":["", "de", "en", "es", "fr", "it", "ja", "ko", "pt-BR", "sv", "zh-CN", "zh-TW"]
+    "locales":["de", "en", "es", "fr", "it", "ja", "ko", "pt-BR", "sv", "und", "zh-CN", "zh-TW"]
   }, {
     "name":"com/sun/javafx/scene/control/skin/resources/controls",
-    "locales":["", "fr"]
+    "locales":["", "fr", "und"]
   }]
 }
