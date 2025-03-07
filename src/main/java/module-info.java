@@ -9,6 +9,7 @@ module org.bfreuden.docxgen {
 	requires org.kordamp.bootstrapfx.core;
 	requires java.desktop;
     requires metadata.extractor;
+    requires java.logging;
 
     opens org.bfreuden.docxgen to javafx.fxml, java.desktop;
 	exports org.bfreuden.docxgen;

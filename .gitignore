@@ -38,3 +38,4 @@ build/
 .DS_Store
 /.idea/
 /reachability-metadata.json
+/data/

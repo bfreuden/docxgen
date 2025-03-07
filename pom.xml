@@ -88,6 +88,17 @@
             <artifactId>undofx</artifactId>
             <version>2.1.1</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-core</artifactId>-->
+<!--            <version>2.24.3</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.12.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -128,14 +139,20 @@
                                     <goal>compile-no-fork</goal>
                                 </goals>
                                 <phase>package</phase>
+                                <configuration>
+                                    <buildArgs>
+                                        <arg>-H:+AddAllCharsets</arg>
+                                        <arg>--initialize-at-build-time=java.util.logging</arg>
+                                    </buildArgs>
+                                </configuration>
                             </execution>
-                            <execution>
-                                <id>test-native</id>
-                                <goals>
-                                    <goal>test</goal>
-                                </goals>
-                                <phase>test</phase>
-                            </execution>
+<!--                            <execution>-->
+<!--                                <id>test-native</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>test</goal>-->
+<!--                                </goals>-->
+<!--                                <phase>test</phase>-->
+<!--                            </execution>-->
                         </executions>
                         <configuration>
                             <verbose>true</verbose>
@@ -149,9 +166,10 @@
                                 <buildArg>--module-path target/${imageName}-${version}.jar</buildArg>
                                 <buildArg>-Ob</buildArg>
                                 <buildArg>-march=native</buildArg>
-                                <buildArg>--initialize-at-build-time=org.bfreuden.docxgen/org.bfreuden.docxgen.Main</buildArg>
+                                <buildArg>--initialize-at-build-time=org.bfreuden.docxgen.Main</buildArg>
+                                <buildArg>--initialize-at-build-time=org.bfreuden.docxgen.DocumentGenerator</buildArg>
                                 <buildArg>--add-modules org.bfreuden.docxgen</buildArg>
-                                <buildArg>--add-modules javafx.base,javafx.graphics,javafx.fxml,javafx.controls,javafx.swing</buildArg>
+                                <buildArg>--add-modules javafx.base,javafx.graphics,javafx.fxml,javafx.controls,javafx.swing,java.logging,metadata.extractor</buildArg>
 
                                 <buildArg>--module org.bfreuden.docxgen/org.bfreuden.docxgen.Main</buildArg>
 
@@ -168,6 +186,7 @@
                                 <buildArg>--module-path ${local.repository}/org/fxmisc/wellbehaved/wellbehavedfx/0.3.3/wellbehavedfx-0.3.3.jar</buildArg>
                                 <buildArg>--module-path ${local.repository}/org/fxmisc/undo/undofx/2.1.1/undofx-2.1.1.jar</buildArg>
                                 <buildArg>--module-path ${local.repository}/com/drewnoakes/metadata-extractor/2.19.0/metadata-extractor-2.19.0.jar</buildArg>
+                                <buildArg>--module-path ${local.repository}/com/adobe/xmp/xmpcore/6.1.11/xmpcore-6.1.11.jar</buildArg>
                             </buildArgs>
                         </configuration>
                     </plugin>

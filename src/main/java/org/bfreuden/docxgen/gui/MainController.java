@@ -71,6 +71,7 @@ public class MainController implements Initializable {
 	public void createDocument(ActionEvent actionEvent) throws IOException {
 		isProcessStarted.setValue(true);
 		getOrCreateExecutor();
+
 		var generator = new DocumentGenerator(getOrCreateExecutor());
 		generator.generate(this.configuration, this.selectedDirectory, progressIndicator);
 	}

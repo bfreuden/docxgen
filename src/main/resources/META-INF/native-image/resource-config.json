@@ -169,6 +169,8 @@
   }, {
     "pattern":"javafx.graphics:\\Qvcruntime140_1.dll\\E"
   }, {
+    "pattern":"org.bfreuden.docxgen:\\Qlogging.properties\\E"
+  }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/config-view.fxml\\E"
   }, {
     "pattern":"org.bfreuden.docxgen:\\Qorg/bfreuden/docxgen/graalvm_rabbit_icon.png\\E"

@@ -1,5 +1,33 @@
 [
 {
+  "name":"com.drew.metadata.exif.ExifIFD0Directory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.drew.metadata.exif.ExifInteropDirectory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.drew.metadata.exif.ExifSubIFDDirectory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.drew.metadata.exif.makernotes.PanasonicMakernoteDirectory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name" : "java.util.logging.ConsoleHandler",
+  "methods" : [
+    { "name" : "<init>", "parameterTypes" : [] }
+  ]
+},
+{
+  "name" : "java.util.logging.FileHandler",
+  "methods" : [
+    { "name" : "<init>", "parameterTypes" : [] }
+  ]
+},
+{
   "name":"com.intellij.rt.execution.application.AppMainV2$Agent",
   "methods":[{"name":"premain","parameterTypes":["java.lang.String","java.lang.instrument.Instrumentation"] }]
 },
