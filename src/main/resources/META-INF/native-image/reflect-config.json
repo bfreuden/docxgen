@@ -16,18 +16,6 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name" : "java.util.logging.ConsoleHandler",
-  "methods" : [
-    { "name" : "<init>", "parameterTypes" : [] }
-  ]
-},
-{
-  "name" : "java.util.logging.FileHandler",
-  "methods" : [
-    { "name" : "<init>", "parameterTypes" : [] }
-  ]
-},
-{
   "name":"com.intellij.rt.execution.application.AppMainV2$Agent",
   "methods":[{"name":"premain","parameterTypes":["java.lang.String","java.lang.instrument.Instrumentation"] }]
 },
@@ -183,6 +171,14 @@
 {
   "name":"java.util.concurrent.atomic.AtomicReference",
   "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.logging.ConsoleHandler",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"java.util.logging.FileHandler",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"javafx.fxml.FXMLLoader"
@@ -421,6 +417,16 @@
   "name":"javafx.stage.Window"
 },
 {
+  "name":"javax.imageio.spi.ImageReaderSpi"
+},
+{
+  "name":"javax.imageio.spi.ImageReaderWriterSpi",
+  "methods":[{"name":"getFileSuffixes","parameterTypes":[] }, {"name":"getFormatNames","parameterTypes":[] }, {"name":"getMIMETypes","parameterTypes":[] }]
+},
+{
+  "name":"javax.imageio.spi.ImageWriterSpi"
+},
+{
   "name":"jdk.internal.misc.Unsafe"
 },
 {
@@ -438,6 +444,10 @@
   "allDeclaredFields":true,
   "queryAllDeclaredMethods":true,
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"createDocument","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"exit","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openParameters","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"selectPhotoDirectory","parameterTypes":[] }]
+},
+{
+  "name":"sun.java2d.marlin.DMarlinRenderingEngine",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"sun.misc.Unsafe",
