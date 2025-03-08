@@ -1,4 +1,4 @@
 package org.bfreuden.docxgen;
 
-public record ImageMetadata(int width, int height, int orientation) {
+public record ImageMetadata(ImageSize size, ImageOrientation orientation) {
 }

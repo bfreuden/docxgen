@@ -32,7 +32,8 @@ public class MainController implements Initializable {
 	private ProgressBar progressBar;
 	@FXML
 	private Button createDocumentBtn;
-	private ExecutorService executor;
+	private ExecutorService imageConversionExecutor;
+	private ExecutorService documentWriterExecutor;
 	private File selectedDirectory;
 
 
@@ -40,10 +41,16 @@ public class MainController implements Initializable {
 		this.stageController = stageController;
 	}
 
-	private synchronized ExecutorService getOrCreateExecutor() {
-		if (executor == null)
-			executor = DaemonBlockingExecutorServiceFactory.create(Runtime.getRuntime().availableProcessors());
-		return executor;
+	private synchronized ExecutorService getOrCreateImageConversionExecutor() {
+		if (imageConversionExecutor == null)
+			imageConversionExecutor = DaemonBlockingExecutorServiceFactory.create(Runtime.getRuntime().availableProcessors());
+		return imageConversionExecutor;
+	}
+
+	private synchronized ExecutorService getOrCreateDocumentWriterExecutor() {
+		if (documentWriterExecutor == null)
+			documentWriterExecutor = DaemonBlockingExecutorServiceFactory.create(1);
+		return documentWriterExecutor;
 	}
 
 	@FXML
@@ -70,10 +77,9 @@ public class MainController implements Initializable {
 	@FXML
 	public void createDocument(ActionEvent actionEvent) throws IOException {
 		isProcessStarted.setValue(true);
-		getOrCreateExecutor();
-
-		var generator = new DocumentGenerator(getOrCreateExecutor());
-		generator.generate(this.configuration, this.selectedDirectory, progressIndicator);
+		getOrCreateImageConversionExecutor();
+		var generator = new DocumentGenerator(getOrCreateImageConversionExecutor(), getOrCreateDocumentWriterExecutor());
+		new Thread(() -> generator.generate(this.configuration, this.selectedDirectory, progressIndicator)).start();
 	}
 
 	@Override

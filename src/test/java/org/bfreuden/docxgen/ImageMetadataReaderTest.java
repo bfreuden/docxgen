@@ -9,10 +9,9 @@ public class ImageMetadataReaderTest {
 
     @Test
     public void test() {
-        ImageMetadataReader reader = new ImageMetadataReader();
-        ImageMetadata metadata = reader.getMetadata(new File("src/test/data/P1250845.JPG"));
-        Assertions.assertEquals(8, metadata.orientation());
-        Assertions.assertEquals(5184, metadata.width());
-        Assertions.assertEquals(3888, metadata.height());
+        ImageMetadata metadata = ImageMetadataReader.getMetadata(new File("src/test/data/P1250845.JPG"));
+        Assertions.assertEquals(ImageOrientation.CLOCKWISE_90, metadata.orientation());
+        Assertions.assertEquals(5184, metadata.size().width());
+        Assertions.assertEquals(3888, metadata.size().height());
     }
 }

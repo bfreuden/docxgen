@@ -63,6 +63,23 @@ public class Configuration {
         save();
     }
 
+    private synchronized int getInteger(String key, Integer defaultValue) throws IOException {
+        String stringValue = properties.getProperty(key);
+        if (stringValue == null && defaultValue != null)
+            setInteger(key, defaultValue);
+        return stringValue == null ? defaultValue : Integer.parseInt(stringValue);
+    }
+
+    private synchronized void setInteger(String key, String value) throws IOException {
+        properties.put(key, value);
+        save();
+    }
+
+    private synchronized void setInteger(String key, int value) throws IOException {
+        properties.put(key, Integer.toString(value));
+        save();
+    }
+
     public void setLastPhotoDirectory(String lastPhotoDirectory) throws IOException {
         setString("lastPhotoDirectory", lastPhotoDirectory);
     }
@@ -70,4 +87,23 @@ public class Configuration {
     public String getLastPhotoDirectory() {
         return getString("lastPhotoDirectory");
     }
+
+
+    public void setDPI(int dpi) throws IOException {
+        setInteger("DPI", dpi);
+    }
+
+    public int getDPI() throws IOException {
+        return getInteger("DPI", 220);
+    }
+
+    public int getImageSize() throws IOException {
+        return getInteger("imageSize", 60);
+    }
+
+    public void setImageSize(int imageSize) throws IOException {
+        setInteger("imageSize", imageSize);
+    }
+
+
 }
