@@ -292,55 +292,55 @@ public class DocumentWriter implements Closeable {
         }
     }
 
-    private void addImageToDocument(String filemane, int width, int height, int targetMaxDimensionInMillimeter, String relId) {
+    private void addImageToDocument(String filename, int width, int height, int targetMaxDimensionInMillimeter, String relId) {
         try {
-
-            HashMap<String, String> replacements = new HashMap<>();
-            // https://stackoverflow.com/questions/8082980/inserting-image-into-docx-using-openxml-and-setting-the-size
-            // emus per mm : 36000
-            int widthEmus, heightEmus;
-            if (width > height) {
-                widthEmus = targetMaxDimensionInMillimeter * 36000;
-                heightEmus = Math.round(1.0f * widthEmus * height / width);
-            } else {
-                heightEmus = targetMaxDimensionInMillimeter * 36000;
-                widthEmus = Math.round(1.0f * heightEmus * width / height);
-            }
-            replacements.put("width.emu", Integer.toString(widthEmus));
-            replacements.put("height.emu", Integer.toString(heightEmus));
-            replacements.put("width.px", Integer.toString(width));
-            replacements.put("height.px", Integer.toString(height));
-            replacements.put("filename", filemane);
-            replacements.put("relId", relId);
-            String imageFragment = imageTemplateFragment;
-            for (Map.Entry<String, String> entry: replacements.entrySet())
-                imageFragment = imageFragment.replace("[[" + entry.getKey() + "]]", entry.getValue());
-            Document document = parseXML(imageFragment);
-            XPathExpression drawingXPath = newXPath("/w:document/w:r", Map.of("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main"));
-            Node imageRun = (Node) drawingXPath.evaluate(document, XPathConstants.NODE);
-            Node paragraph = documentXmlDom.createElement("w:p");
-
-            Node jc = documentXmlDom.createElement("w:jc");
-            Attr valAtt = documentXmlDom.createAttribute("w:val");
-            valAtt.setValue("center");
-            Node pPr = documentXmlDom.createElement("w:pPr");
-            pPr.appendChild(jc);
-            ((Element)jc).setAttributeNode(valAtt);
-            paragraph.appendChild(pPr);
-
-            /*
-                  <w:pPr>
-        <w:jc w:val="center"/>
-                </w:pPr>
-
-             */
-            Node importedImageRun = documentXmlDom.importNode(imageRun, true);
+            Node importedImageRun = createImageRun(filename, width, height, targetMaxDimensionInMillimeter, relId);
+            Node paragraph = addParagraph();
             paragraph.appendChild(importedImageRun);
-            insertPicturesBefore.getParentNode().insertBefore(paragraph, insertPicturesBefore);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
 
+    }
+
+    private Node createImageRun(String filename, int width, int height, int targetMaxDimensionInMillimeter, String relId) throws XPathExpressionException {
+        HashMap<String, String> replacements = new HashMap<>();
+        // https://stackoverflow.com/questions/8082980/inserting-image-into-docx-using-openxml-and-setting-the-size
+        // emus per mm : 36000
+        int widthEmus, heightEmus;
+        if (width > height) {
+            widthEmus = targetMaxDimensionInMillimeter * 36000;
+            heightEmus = Math.round(1.0f * widthEmus * height / width);
+        } else {
+            heightEmus = targetMaxDimensionInMillimeter * 36000;
+            widthEmus = Math.round(1.0f * heightEmus * width / height);
+        }
+        replacements.put("width.emu", Integer.toString(widthEmus));
+        replacements.put("height.emu", Integer.toString(heightEmus));
+        replacements.put("width.px", Integer.toString(width));
+        replacements.put("height.px", Integer.toString(height));
+        replacements.put("filename", filename);
+        replacements.put("relId", relId);
+        String imageFragment = imageTemplateFragment;
+        for (Map.Entry<String, String> entry: replacements.entrySet())
+            imageFragment = imageFragment.replace("[[" + entry.getKey() + "]]", entry.getValue());
+        Document document = parseXML(imageFragment);
+        XPathExpression drawingXPath = newXPath("/w:document/w:r", Map.of("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main"));
+        Node imageRun = (Node) drawingXPath.evaluate(document, XPathConstants.NODE);
+        return documentXmlDom.importNode(imageRun, true);
+    }
+
+    private Node addParagraph() {
+        Node paragraph = documentXmlDom.createElement("w:p");
+        Node justification = documentXmlDom.createElement("w:jc");
+        Attr valAtt = documentXmlDom.createAttribute("w:val");
+        valAtt.setValue("center");
+        Node paragraphProperties = documentXmlDom.createElement("w:pPr");
+        paragraphProperties.appendChild(justification);
+        ((Element)justification).setAttributeNode(valAtt);
+        paragraph.appendChild(paragraphProperties);
+        insertPicturesBefore.getParentNode().insertBefore(paragraph, insertPicturesBefore);
+        return paragraph;
     }
 
     private void addImageContentType(String overrideImagePartName) {
@@ -375,6 +375,21 @@ public class DocumentWriter implements Closeable {
         ImageWriter.writeJPG(image, new CloseShieldOutputStream(zos), compressionQuality);
         zos.closeEntry();
     }
+
+/*
+    page left/right margins
+
+    https://learn.microsoft.com/en-us/dotnet/api/documentformat.openxml.wordprocessing.pagemargin?view=openxml-3.0.1
+
+    Unit:  1,440 twentieths of a point (one inch) on all sides
+
+    <w:sectPr>
+      <w:pgMar w:left="1975" w:right="1593" w:header="708" w:top="765" w:footer="708" w:bottom="1438" w:gutter="0"/>
+    </w:sectPr>
+  </w:body>
+</w:document>
+
+ */
 
 
 }
