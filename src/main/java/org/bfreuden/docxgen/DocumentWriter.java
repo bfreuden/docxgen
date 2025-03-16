@@ -45,9 +45,10 @@ public class DocumentWriter implements Closeable {
     private Node typesNode;
     private String imageTemplateFragment;
     private HashSet<Integer> paragraphIds;
-    private String paragraphRootId;
-    private Element paragraphIdsDom;
     private Element insertPicturesBefore;
+
+    private Node currentParagraph = null;
+    private boolean firstImageInLineIsLandscape;
 
     public DocumentWriter(File template) {
         this.template = template;
@@ -295,13 +296,47 @@ public class DocumentWriter implements Closeable {
     private void addImageToDocument(String filename, int width, int height, int targetMaxDimensionInMillimeter, String relId) {
         try {
             Node importedImageRun = createImageRun(filename, width, height, targetMaxDimensionInMillimeter, relId);
-            Node paragraph = addParagraph();
-            paragraph.appendChild(importedImageRun);
+            if (currentParagraph == null) { // first image of row
+                currentParagraph = addParagraph();
+                currentParagraph.appendChild(importedImageRun);
+                firstImageInLineIsLandscape = width > height;
+
+            } else {
+                boolean secondImageInLineIsLandscape = width > height;
+                addTabsBetweenImages(firstImageInLineIsLandscape, secondImageInLineIsLandscape);
+                currentParagraph.appendChild(importedImageRun);
+                currentParagraph = null;
+                addParagraph();
+            }
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
 
     }
+
+    private void addTabsBetweenImages(Boolean firstImageInLineIsLandscape, boolean secondImageInLineIsLandscape) {
+        int nbTabs;
+        if (firstImageInLineIsLandscape) {
+            if (secondImageInLineIsLandscape) {
+                nbTabs = 1;
+            } else {
+                nbTabs = 2;
+            }
+        } else {
+            if (secondImageInLineIsLandscape) {
+                nbTabs = 2;
+            } else {
+                nbTabs = 3;
+            }
+        }
+        for (int i=0 ; i<nbTabs ; i++) {
+            Node run = documentXmlDom.createElement("w:r");
+            Node tab = documentXmlDom.createElement("w:tab");
+            run.appendChild(tab);
+            currentParagraph.appendChild(run);
+        }
+    }
+
 
     private Node createImageRun(String filename, int width, int height, int targetMaxDimensionInMillimeter, String relId) throws XPathExpressionException {
         HashMap<String, String> replacements = new HashMap<>();
