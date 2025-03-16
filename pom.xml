@@ -166,10 +166,12 @@
                                 <buildArg>--module-path target/${imageName}-${version}.jar</buildArg>
                                 <buildArg>-Ob</buildArg>
                                 <buildArg>-march=native</buildArg>
+                                <!-- FIXME required for logging? -->
                                 <buildArg>--initialize-at-build-time=org.bfreuden.docxgen.Main</buildArg>
+                                <!-- FIXME required for logging? -->
                                 <buildArg>--initialize-at-build-time=org.bfreuden.docxgen.DocumentGenerator</buildArg>
                                 <buildArg>--add-modules org.bfreuden.docxgen</buildArg>
-                                <buildArg>--add-modules javafx.base,javafx.graphics,javafx.fxml,javafx.controls,javafx.swing,java.logging,metadata.extractor</buildArg>
+                                <buildArg>--add-modules javafx.base,javafx.graphics,javafx.fxml,javafx.controls,javafx.swing,java.logging,java.xml,metadata.extractor</buildArg>
 
                                 <buildArg>--module org.bfreuden.docxgen/org.bfreuden.docxgen.Main</buildArg>
 

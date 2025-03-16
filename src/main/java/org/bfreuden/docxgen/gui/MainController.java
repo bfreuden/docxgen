@@ -19,9 +19,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MainController implements Initializable {
 
+	private static final Logger LOGGER = Logger.getLogger( "MainController" );
 	private StageController stageController;
 
 	private BooleanProperty isDirectorySelected = new SimpleBooleanProperty(false);
@@ -79,7 +82,14 @@ public class MainController implements Initializable {
 		isProcessStarted.setValue(true);
 		getOrCreateImageConversionExecutor();
 		var generator = new DocumentGenerator(getOrCreateImageConversionExecutor(), getOrCreateDocumentWriterExecutor());
-		new Thread(() -> generator.generate(this.configuration, this.selectedDirectory, progressIndicator)).start();
+		new Thread(() -> {
+			try {
+				generator.generate(this.configuration, this.selectedDirectory, progressIndicator);
+			} catch (Exception ex) {
+				//TODO handle error reporting in UI
+				LOGGER.log(Level.SEVERE, "unable to generate document", ex);
+			}
+		}).start();
 	}
 
 	@Override

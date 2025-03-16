@@ -10,6 +10,7 @@ module org.bfreuden.docxgen {
 	requires java.desktop;
     requires metadata.extractor;
     requires java.logging;
+    requires java.xml;
 
     opens org.bfreuden.docxgen to javafx.fxml, java.desktop;
 	exports org.bfreuden.docxgen;
