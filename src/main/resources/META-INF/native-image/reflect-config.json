@@ -65,6 +65,10 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"com.sun.prism.GraphicsPipeline",
   "methods":[{"name":"getFontFactory","parameterTypes":[] }, {"name":"getPipeline","parameterTypes":[] }]
 },
@@ -159,6 +163,12 @@
 {
   "name":"java.nio.ByteOrder",
   "methods":[{"name":"nativeOrder","parameterTypes":[] }]
+},
+{
+  "name":"java.security.AccessController"
+},
+{
+  "name":"java.security.SecureRandomParameters"
 },
 {
   "name":"java.util.concurrent.ForkJoinTask",
@@ -446,6 +456,18 @@
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"createDocument","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"exit","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openParameters","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"selectPhotoDirectory","parameterTypes":[] }]
 },
 {
+  "name":"org.docx4j.org.apache.xml.serializer.ToXMLStream",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.docx4j.org.apache.xml.utils.FastStringBuffer",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"org.docx4j.org.apache.xpath.functions.FuncContains",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"sun.java2d.marlin.DMarlinRenderingEngine",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
@@ -455,6 +477,14 @@
 },
 {
   "name":"sun.security.provider.MD5",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
+},
+{
+  "name":"sun.security.provider.SHA",
   "methods":[{"name":"<init>","parameterTypes":[] }]
 }
 ]

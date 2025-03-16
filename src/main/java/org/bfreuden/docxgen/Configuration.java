@@ -70,6 +70,13 @@ public class Configuration {
         return stringValue == null ? defaultValue : Integer.parseInt(stringValue);
     }
 
+    private synchronized float getFloat(String key, Float defaultValue) throws IOException {
+        String stringValue = properties.getProperty(key);
+        if (stringValue == null && defaultValue != null)
+            setFloat(key, defaultValue);
+        return stringValue == null ? defaultValue : Float.parseFloat(stringValue);
+    }
+
     private synchronized void setInteger(String key, String value) throws IOException {
         properties.put(key, value);
         save();
@@ -77,6 +84,11 @@ public class Configuration {
 
     private synchronized void setInteger(String key, int value) throws IOException {
         properties.put(key, Integer.toString(value));
+        save();
+    }
+
+    private synchronized void setFloat(String key, float value) throws IOException {
+        properties.put(key, Float.toString(value));
         save();
     }
 
@@ -105,5 +117,11 @@ public class Configuration {
         setInteger("imageSize", imageSize);
     }
 
+    public float getCompressionQuality() throws IOException {
+        return getFloat("compressionQuality", 0.95f);
+    }
 
+    public void setCompressionQuality(float compressionQuality) throws IOException {
+        setFloat("compressionQuality", compressionQuality);
+    }
 }
