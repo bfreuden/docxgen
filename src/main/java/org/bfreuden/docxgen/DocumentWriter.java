@@ -235,7 +235,7 @@ public class DocumentWriter implements Closeable {
     }
 
     private String getOverrideImagePartName() {
-        return "/word/media/image" + nextImageId + ".jpeg";
+        return "word/media/image" + nextImageId + ".jpeg";
     }
 
     private Document parseXML(InputStream is) {
@@ -318,7 +318,22 @@ public class DocumentWriter implements Closeable {
             Document document = parseXML(imageFragment);
             XPathExpression drawingXPath = newXPath("/w:document/w:r", Map.of("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main"));
             Node imageRun = (Node) drawingXPath.evaluate(document, XPathConstants.NODE);
-            Node paragraph = documentXmlDom.createElementNS("http://schemas.openxmlformats.org/wordprocessingml/2006/main", "p");
+            Node paragraph = documentXmlDom.createElement("w:p");
+
+            Node jc = documentXmlDom.createElement("w:jc");
+            Attr valAtt = documentXmlDom.createAttribute("w:val");
+            valAtt.setValue("center");
+            Node pPr = documentXmlDom.createElement("w:pPr");
+            pPr.appendChild(jc);
+            ((Element)jc).setAttributeNode(valAtt);
+            paragraph.appendChild(pPr);
+
+            /*
+                  <w:pPr>
+        <w:jc w:val="center"/>
+                </w:pPr>
+
+             */
             Node importedImageRun = documentXmlDom.importNode(imageRun, true);
             paragraph.appendChild(importedImageRun);
             insertPicturesBefore.getParentNode().insertBefore(paragraph, insertPicturesBefore);
@@ -348,7 +363,7 @@ public class DocumentWriter implements Closeable {
         String relId = "rId" + nextRelId;
         rel.setAttribute("Id", relId);
         rel.setAttribute("Type", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image");
-        rel.setAttribute("Target", overrideImagePartName.replace("/word/", ""));
+        rel.setAttribute("Target", overrideImagePartName.replace("word/", ""));
         relationshipsNode.appendChild(rel);
         nextRelId++;
 
